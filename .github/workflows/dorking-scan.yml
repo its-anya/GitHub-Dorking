@@ -1,0 +1,43 @@
+name: GitHub Dorking Scan
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Run weekly
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run Dorking Scan
+        run: |
+          echo "Running GitHub Dorking Scan..."
+          echo "This is a demonstration workflow."
+          echo "In a real implementation, you would integrate with GitHub API"
+          echo "to search for sensitive information using the dorks."
+          python dorking_helper.py --count
+
+      - name: Generate Report
+        run: |
+          echo "# GitHub Dorking Scan Report" > scan-report.md
+          echo "Scan completed at: $(date)" >> scan-report.md
+          echo "Total dorks available: $(python dorking_helper.py --count | grep -o '[0-9]*')" >> scan-report.md
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: dorking-scan-report
+          path: scan-report.md
