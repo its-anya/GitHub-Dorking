@@ -12,6 +12,14 @@ GitHub Dorking is the practice of using advanced search operators (dorks) to fin
 - Vulnerable code patterns
 - Internal documentation
 
+## Repository Organization
+
+This repository is organized into the following directories:
+
+- `docs/` - Documentation and guides
+- `scripts/` - Helper scripts for working with dorks
+- Root directory contains the main dorking file and essential project files
+
 ## Usage
 
 The [GitHub Dorking.txt](GitHub%20Dorking.txt) file contains hundreds of dorking patterns organized by categories:
@@ -22,6 +30,22 @@ The [GitHub Dorking.txt](GitHub%20Dorking.txt) file contains hundreds of dorking
 - Database Connections
 - Cloud Service Keys
 - And many more
+
+### Documentation
+
+See the [docs/](docs/) directory for comprehensive guides:
+- [GitHub Dorking Guide](docs/GITHUB_DORKING_GUIDE.md) - Complete usage guide
+- [Dork Categories Explained](docs/DORK_CATEGORIES_EXPLAINED.md) - Detailed category explanations
+- [Responsible Dorking](docs/RESPONSIBLE_DORKING.md) - Ethical usage guidelines
+- [Top Dorks](docs/TOP_DORKS.md) - Most effective dorking patterns
+- [Usage Guide](docs/USAGE.md) - Detailed usage instructions
+
+### Helper Scripts
+
+See the [scripts/](scripts/) directory for helper tools:
+- [dorking_helper.py](scripts/dorking_helper.py) - Cross-platform Python script
+- [dorking_helper.bat](scripts/dorking_helper.bat) - Windows batch script
+- [dorking_helper.sh](scripts/dorking_helper.sh) - Linux/Mac shell script
 
 ### Example Dorks
 
